@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Transactional Email</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+      /* CLIENT-SPECIFIC STYLES */
+      body,
+      table,
+      td,
+      a {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      } /* Prevent WebKit and Windows mobile changing default text sizes */
+      table,
+      td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      } /* Remove spacing between tables in Outlook 2007 and up */
+      img {
+        -ms-interpolation-mode: bicubic;
+      } /* Allow smoother rendering of resized image in Internet Explorer */
+
+      /* RESET STYLES */
+      img {
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+      }
+      table {
+        border-collapse: collapse !important;
+      }
+      body {
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+      }
+
+      /* iOS BLUE LINKS */
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+
+      /* MOBILE STYLES */
+      @media screen and (max-width: 525px) {
+        /* ALLOWS FOR FLUID TABLES */
+        .wrapper {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        /* ADJUSTS LAYOUT OF LOGO IMAGE */
+        .logo img {
+          margin: 0 auto !important;
+        }
+
+        /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+        .mobile-hide {
+          display: none !important;
+        }
+
+        .img-max {
+          max-width: 100% !important;
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        /* FULL-WIDTH TABLES */
+        .responsive-table {
+          width: 100% !important;
+        }
+
+        /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+        .padding {
+          padding: 10px 5% 15px 5% !important;
+        }
+
+        .padding-meta {
+          padding: 30px 5% 0px 5% !important;
+          text-align: center;
+        }
+
+        .padding-copy {
+          padding: 10px 5% 10px 5% !important;
+          text-align: center;
+        }
+
+        .no-padding {
+          padding: 0 !important;
+        }
+
+        .section-padding {
+          padding: 50px 15px 50px 15px !important;
+        }
+
+        /* ADJUST BUTTONS ON MOBILE */
+        .mobile-button-container {
+          margin: 0 auto;
+          width: 100% !important;
+        }
+
+        .mobile-button {
+          padding: 15px !important;
+          border: 0 !important;
+          font-size: 16px !important;
+          display: block !important;
+        }
+      }
+
+      /* ANDROID CENTER FIX */
+      div[style*="margin: 16px 0;"] {
+        margin: 0 !important;
+      }
+    </style>
+  </head>
+  <body style="margin: 0 !important; padding: 0 !important">
+    <!-- HIDDEN PREHEADER TEXT -->
+    <div
+      style="
+        display: none;
+        font-size: 1px;
+        color: #fefefe;
+        line-height: 1px;
+        font-family: Helvetica, Arial, sans-serif;
+        max-height: 0px;
+        max-width: 0px;
+        opacity: 0;
+        overflow: hidden;
+      "
+    >
+      Your Amazon Order
+    </div>
+
+    <!-- HEADER -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%"
+    >
+      <!--start-->
+      <tr>
+        <td bgcolor="#ffffff" align="center">
+          <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+            <tr>
+            <td align="center" valign="top" width="500">
+            <![endif]-->
+          <table
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            width="100%"
+            style="max-width: 500px"
+            class="wrapper"
+          >
+            <tr>
+              <td
+                align="center"
+                valign="top"
+                style="padding: 15px 0"
+                class="logo"
+              >
+                <img
+                  alt="Logo"
+                  src="https://i.imgur.com/phlCFeg.png"
+                  width="125"
+                  height="auto"
+                  style="
+                    display: block;
+                    font-family: Helvetica, Arial, sans-serif;
+                    color: #ffffff;
+                    font-size: 16px;
+                  "
+                  border="0"
+                />
+              </td>
+            </tr>
+          </table>
+          <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
+      </tr>
+      <!--stop-->
+      <!--start-->
+
+      <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 15px">
+          <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+            <tr>
+            <td align="center" valign="top" width="500">
+            <![endif]-->
+          <table
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            width="100%"
+            style="max-width: 500px"
+            class="responsive-table"
+          >
+            <tr>
+              <td>
+                <!-- COPY -->
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td
+                      align="left"
+                      style="
+                        padding: 20px 0 0 10%;
+                        font-size: 22px;
+                        font-family: Helvetica, Arial, sans-serif;
+                        color: black;
+                        padding-top: 30px;
+                      "
+                      class="padding-copy"
+                    >
+                      Hi Charles, your package will arrive:
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      align="left"
+                      style="
+                        padding: 20px 20% 5% 10%;
+                        font-size: 18px;
+                        font-weight: bold;
+                        line-height: 25px;
+                        font-family: Helvetica, Arial, sans-serif;
+                        color: rgb(0, 158, 0);
+                      "
+                      class="padding-copy"
+                    >
+                      Monday, April 6
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td align="center">
+                      <!-- BULLETPROOF BUTTON -->
+                      <table
+                        width="100%"
+                        border="0"
+                        cellspacing="0"
+                        cellpadding="0"
+                      >
+                        <tr>
+                          <td
+                            align="left"
+                            style="padding-top: 0px; padding-left: 10%"
+                            class="padding"
+                          >
+                            <table
+                              border="0"
+                              cellspacing="0"
+                              cellpadding="0"
+                              class="mobile-button-container"
+                            >
+                              <tr>
+                                <td
+                                  align="center"
+                                  style="border-radius: 3px"
+                                  bgcolor="#e0cb6e"
+                                >
+                                  <a
+                                    href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=5CKSVEVR05Y5&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Fship-track%3Fie%3DUTF8%26orderId%3D114-2144609-3138650%26packageIndex%3D0%26shipmentId%3DDs7Sk7ft7%26ref_%3Dpe_2640190_232586610_scr_pt_track&H=QGRCCWG1QZLW2TJ3S2AQZ9LRSFSA&ref_=pe_2640190_232586610_scr_pt_track"
+                                    target="_blank"
+                                    style="
+                                      font-size: 16px;
+                                      font-family: Helvetica, Arial, sans-serif;
+                                      text-decoration: none;
+                                      color: blue;
+                                      text-decoration: none;
+                                      border-radius: 3px;
+                                      padding: 13px 100px;
+                                      border: 1px solid #e0cb6e;
+                                      display: inline-block;
+                                    "
+                                    class="mobile-button"
+                                    >Track Package</a
+                                  >
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 10% 20% 10% 10%">
+                <!-- TWO COLUMNS -->
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td valign="top" class="mobile-wrapper">
+                      <!-- LEFT COLUMN -->
+                      <table
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                        width="30%"
+                        style="width: 30%"
+                        align="left"
+                      >
+                        <tr>
+                          <td style="padding: 0 0 10px 0">
+                            <table
+                              cellpadding="0"
+                              cellspacing="0"
+                              border="0"
+                              width="100%"
+                            >
+                              <tr>
+                                <td
+                                  align="left"
+                                  style="
+                                    font-family: Arial, sans-serif;
+                                    color: #333333;
+                                    font-size: 16px;
+                                  "
+                                >
+                                <a href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=2UNJ2W49N5TVV&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Fship-track%3Fie%3DUTF8%26orderId%3D114-2144609-3138650%26packageIndex%3D0%26shipmentId%3DDs7Sk7ft7%26ref_%3Dpe_2640190_232586610_scr_pt_asin&H=FZOLVVIH8HFWGZZTGLXSHPGKLHMA&ref_=pe_2640190_232586610_scr_pt_asin"><img src="https://i.imgur.com/Oz3TNYu.png" height="auto" width="40px">
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- RIGHT COLUMN -->
+                      <table
+                        cellpadding="0"
+                        cellspacing="0"
+                       
+                        border="0"
+                        width="47%"
+                        style="width: 47%"
+                        align="left"
+                      >
+                        <tr>
+                          <td style="padding: 0 0 0 0">
+                            <table
+                              cellpadding="0"
+                              cellspacing="0"
+                              border="0"
+                              width="100%"
+                            >
+                              <tr>
+                                <td
+                                  align="left"
+                                  style="
+                                    font-family: Arial, sans-serif;
+                                    color: #333333;
+                                    font-size: 16px;
+                                  "
+                                >
+                                <a style="text-decoration:none !important; text-decoration:none;  font-weight: bold; color: grey; font-size: 15px" href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=2UNJ2W49N5TVV&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Fship-track%3Fie%3DUTF8%26orderId%3D114-2144609-3138650%26packageIndex%3D0%26shipmentId%3DDs7Sk7ft7%26ref_%3Dpe_2640190_232586610_scr_pt_asin&H=FZOLVVIH8HFWGZZTGLXSHPGKLHMA&ref_=pe_2640190_232586610_scr_pt_asin">ON THE WAY </a><br>
+                                <a style="text-decoration:none !important; text-decoration:none; color: black; font-size: 20px" href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=2UNJ2W49N5TVV&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Fship-track%3Fie%3DUTF8%26orderId%3D114-2144609-3138650%26packageIndex%3D0%26shipmentId%3DDs7Sk7ft7%26ref_%3Dpe_2640190_232586610_scr_pt_asin&H=FZOLVVIH8HFWGZZTGLXSHPGKLHMA&ref_=pe_2640190_232586610_scr_pt_asin">1 item</a>    
+                                <br>
+                                <a style="text-decoration:none !important; text-decoration:none;  color: grey; font-size: 14px" href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=2UNJ2W49N5TVV&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Fship-track%3Fie%3DUTF8%26orderId%3D114-2144609-3138650%26packageIndex%3D0%26shipmentId%3DDs7Sk7ft7%26ref_%3Dpe_2640190_232586610_scr_pt_asin&H=FZOLVVIH8HFWGZZTGLXSHPGKLHMA&ref_=pe_2640190_232586610_scr_pt_asin">Order #114-2144609-3138650</a><br>
+                                <a style="text-decoration:none !important; text-decoration:none;   color: grey; font-size: 14px" href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=2UNJ2W49N5TVV&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Fship-track%3Fie%3DUTF8%26orderId%3D114-2144609-3138650%26packageIndex%3D0%26shipmentId%3DDs7Sk7ft7%26ref_%3Dpe_2640190_232586610_scr_pt_asin&H=FZOLVVIH8HFWGZZTGLXSHPGKLHMA&ref_=pe_2640190_232586610_scr_pt_asin">An Amazon driver may</a><br>
+                                <a style="text-decoration:none !important; text-decoration:none;   color: grey; font-size: 14px" href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=2UNJ2W49N5TVV&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Fship-track%3Fie%3DUTF8%26orderId%3D114-2144609-3138650%26packageIndex%3D0%26shipmentId%3DDs7Sk7ft7%26ref_%3Dpe_2640190_232586610_scr_pt_asin&H=FZOLVVIH8HFWGZZTGLXSHPGKLHMA&ref_=pe_2640190_232586610_scr_pt_asin">contact you by text message</a><br>
+                                <a style="text-decoration:none !important; text-decoration:none;   color: grey; font-size: 14px" href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=2UNJ2W49N5TVV&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Fship-track%3Fie%3DUTF8%26orderId%3D114-2144609-3138650%26packageIndex%3D0%26shipmentId%3DDs7Sk7ft7%26ref_%3Dpe_2640190_232586610_scr_pt_asin&H=FZOLVVIH8HFWGZZTGLXSHPGKLHMA&ref_=pe_2640190_232586610_scr_pt_asin">or call you for help</a><br>
+                                <a style="text-decoration:none !important; text-decoration:none;  color: grey; font-size: 14px" href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=2UNJ2W49N5TVV&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Fship-track%3Fie%3DUTF8%26orderId%3D114-2144609-3138650%26packageIndex%3D0%26shipmentId%3DDs7Sk7ft7%26ref_%3Dpe_2640190_232586610_scr_pt_asin&H=FZOLVVIH8HFWGZZTGLXSHPGKLHMA&ref_=pe_2640190_232586610_scr_pt_asin">on the day of delivery.</a><br>
+                                
+                            </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+                <td style="padding: 0 20% 10% 10%">
+                  <!-- TWO COLUMNS -->
+                  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td valign="top" class="mobile-wrapper">
+                        <!-- LEFT COLUMN -->
+                        <table
+                          cellpadding="0"
+                          cellspacing="0"
+                          border="0"
+                          width="30%"
+                          style="width: 30%"
+                          align="left"
+                        >
+                          <tr>
+                            <td style="padding: 0 0 10px 0">
+                              <table
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="left"
+                                    style="
+                                      font-family: Arial, sans-serif;
+                                      color: #333333;
+                                      font-size: 16px;
+                                    "
+                                  >
+                                  <a style="" href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=2UNJ2W49N5TVV&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Fship-track%3Fie%3DUTF8%26orderId%3D114-2144609-3138650%26packageIndex%3D0%26shipmentId%3DDs7Sk7ft7%26ref_%3Dpe_2640190_232586610_scr_pt_asin&H=FZOLVVIH8HFWGZZTGLXSHPGKLHMA&ref_=pe_2640190_232586610_scr_pt_asin"><img src="https://i.imgur.com/Tz2BjKX.png" height="auto" width="30px">
+                                  </a>                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- RIGHT COLUMN -->
+                        <table
+                          cellpadding="0"
+                          cellspacing="0"
+                         
+                          border="0"
+                          width="47%"
+                          style="width: 47%"
+                          align="left"
+                        >
+                          <tr>
+                            <td style="padding: px 0 0 0">
+                              <table
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="left"
+                                    style="
+                                      font-family: Arial, sans-serif;
+                                      color: #333333;
+                                      font-size: 16px;
+                                    "
+                                  >
+                                  
+                                  <a style="text-decoration:none !important; text-decoration:none; font-weight: bold; color: grey; font-size: 15px" href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=2UNJ2W49N5TVV&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Fship-track%3Fie%3DUTF8%26orderId%3D114-2144609-3138650%26packageIndex%3D0%26shipmentId%3DDs7Sk7ft7%26ref_%3Dpe_2640190_232586610_scr_pt_asin&H=FZOLVVIH8HFWGZZTGLXSHPGKLHMA&ref_=pe_2640190_232586610_scr_pt_asin">SHIP TO</a><br>
+                                  <a style="text-decoration:none !important; text-decoration:none; color: black;  font-size: 20px" href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=2UNJ2W49N5TVV&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Fship-track%3Fie%3DUTF8%26orderId%3D114-2144609-3138650%26packageIndex%3D0%26shipmentId%3DDs7Sk7ft7%26ref_%3Dpe_2640190_232586610_scr_pt_asin&H=FZOLVVIH8HFWGZZTGLXSHPGKLHMA&ref_=pe_2640190_232586610_scr_pt_asin">Charles Cobb</a>
+                                  <a style="text-decoration:none !important; text-decoration:none; color: black;  font-size: 20px" href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=2UNJ2W49N5TVV&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Fship-track%3Fie%3DUTF8%26orderId%3D114-2144609-3138650%26packageIndex%3D0%26shipmentId%3DDs7Sk7ft7%26ref_%3Dpe_2640190_232586610_scr_pt_asin&H=FZOLVVIH8HFWGZZTGLXSHPGKLHMA&ref_=pe_2640190_232586610_scr_pt_asin">555 Street St</a>
+                                  
+                              </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 0 20% 10% 10%">
+                  <!-- TWO COLUMNS -->
+                  <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td valign="top" class="mobile-wrapper">
+                        <!-- LEFT COLUMN -->
+                        <table
+                          cellpadding="0"
+                          cellspacing="0"
+                          border="0"
+                          width="30%"
+                          style="width: 30%"
+                          align="left"
+                        >
+                          <tr>
+                            <td style="padding: 0 0 10px 0">
+                              <table
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="left"
+                                    style="
+                                      font-family: Arial, sans-serif;
+                                      color: #333333;
+                                      font-size: 16px;
+                                    "
+                                  >
+                                  <a href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=3ILJO5FMVZQND&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Forder-details%3Fie%3DUTF8%26orderID%3D114-2144609-3138650%26ref_%3Dpe_2640190_232586610_scr_od_price&H=MSEMMTFN8VJZBSQREREMTGL4SSKA&ref_=pe_2640190_232586610_scr_od_price"><img src="https://i.imgur.com/3WbQQur.png" height="auto" width="30px">
+                                  </a>                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- RIGHT COLUMN -->
+                        <table
+                          cellpadding="0"
+                          cellspacing="0"
+                         
+                          border="0"
+                          width="47%"
+                          style="width: 47%"
+                          align="left"
+                        >
+                          <tr>
+                            <td style="padding: 0 0 0 0">
+                              <table
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="left"
+                                    style="
+                                      font-family: Arial, sans-serif;
+                                      color: #333333;
+                                      font-size: 16px;
+                                    "
+                                  >
+                                  <a style="text-decoration:none !important; text-decoration:none;  font-weight: bold; color: grey; font-size: 15px" href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=3ILJO5FMVZQND&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Forder-details%3Fie%3DUTF8%26orderID%3D114-2144609-3138650%26ref_%3Dpe_2640190_232586610_scr_od_price&H=MSEMMTFN8VJZBSQREREMTGL4SSKA&ref_=pe_2640190_232586610_scr_od_price">SHIPMENT TOTAL</a><br>
+                                  <a style="text-decoration:none !important; text-decoration:none; color: rgb(85, 85, 255);  font-size: 20px" href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=3ILJO5FMVZQND&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fyour-account%2Forder-details%3Fie%3DUTF8%26orderID%3D114-2144609-3138650%26ref_%3Dpe_2640190_232586610_scr_od_price&H=MSEMMTFN8VJZBSQREREMTGL4SSKA&ref_=pe_2640190_232586610_scr_od_price">$30.54</a>
+                                 
+                              </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+                
+          </table>
+          <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
+      </tr>
+      <!--stop-->
+
+      
+     
+      <!--start-->
+      <tr>
+        <td bgcolor="#ffffff" align="center" style="padding: 15px">
+          <table
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            width="500"
+            class="responsive-table"
+          >
+            <tr>
+              <td>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                 
+                  <tr>
+                    <td
+                      align="left"
+                      style="
+                        padding: 0% 20% 5% 10%;
+                        font-size: 14px;
+                        line-height: 16px;
+                        font-family: Helvetica, Arial, sans-serif;
+                        color: #666666;
+                      "
+                      class="padding-copy"
+                    >
+                    Return or replace items in <a href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=2KD4W9NZYPOIF&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fcss%2Forder-history%3Fie%3DUTF8%26ref_%3Dpe_2640190_232586610_scr_yo&H=BXNOW6UAZTL6P3CAEADBXRQTKIIA&ref_=pe_2640190_232586610_scr_yo">Your Orders</a>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      align="left"
+                      style="
+                        padding: 0% 20% 10% 10%;
+                        font-size: 14px;
+                        line-height: 16px;
+                        font-family: Helvetica, Arial, sans-serif;
+                        color: #666666;
+                      "
+                      class="padding-copy"
+                    >
+                    Learn how to recycle your packaging at<a href="https://www.amazon.com/gp/f.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=3JSJ1EQ87JAM9&T=C&U=https%3A%2F%2Fwww.amazon.com%2Famsc%3Fref_%3Dpe_2640190_232586610_ascyorn&H=RIAEU0ZWD6G0YVWGRQWNK2J1WLCA&ref_=pe_2640190_232586610_ascyorn"> Amazon Second Chance.</a>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      align="left"
+                      style="
+                        padding: 0% 20% 5% 10%;
+                        font-size: 12px;
+                        line-height: 16px;
+                        font-family: Helvetica, Arial, sans-serif;
+                        color: #666666;
+                      "
+                      class="padding-copy"
+                    >
+                    Unless otherwise noted, items sold by Amazon.com are subject to sales tax in select states in accordance with the applicable laws of that state. If your order contains one or more items from a seller other than Amazon.com, it may be subject to state and local sales tax, depending upon the sellers business policies and the location of their operations. Learn more about <a href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=RMLHKM5ZTB1J&T=C&U=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fhelp%2Fcustomer%2Fdisplay.html%3Fie%3DUTF8%26nodeId%3D202029700%26ref_-%3Dscr_help_tax%26ref_%3Dpe_2640190_232586610&H=OFCKWOFJ7M3HL66KBCXWBFB78AWA&ref_=pe_2640190_232586610"> tax and seller information.</a>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      align="left"
+                      style="
+                        padding: 0% 20% 5% 10%;
+                        font-size: 12px;
+                        line-height: 16px;
+                        font-family: Helvetica, Arial, sans-serif;
+                        color: #666666;
+                      "
+                      class="padding-copy"
+                    >
+                    Your invoice can be accessed <a href="https://www.amazon.com/gp/r.html?C=1TTJGNIAUG1LO&K=1ZUGY9FIWR0SY&M=urn:rtn:msg:2020040319163887093c175041447bacc6e9950ee0p0na&R=XFCK3AEMM019&T=C&U=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fcss%2Fsummary%2Fprint.html%3Fie%3DUTF8%26orderID%3D114-2144609-3138650%26ref_%3Dpe_2640190_232586610_scr_od_invoice&H=SV8HNEWXSK2GOZH3URJP5IRKSGCA&ref_=pe_2640190_232586610_scr_od_invoice"> here.</a>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      align="left"
+                      style="
+                        padding: 0% 20% 5% 10%;
+                        font-size: 12px;
+                        line-height: 16px;
+                        font-family: Helvetica, Arial, sans-serif;
+                        color: #666666;
+                      "
+                      class="padding-copy"
+                    >
+                    This email was sent from a notification-only address that cannot accept incoming email. Please do not reply to this message. 
+
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
+      </tr>
+      <!--stop-->
+      
+    </table>
+  </body>
+</html>
